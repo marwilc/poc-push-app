@@ -55,6 +55,7 @@
               "outputHashing": "all"
             },
             "gp": {
+              "baseHref": "/poc-push-app/",
               "outputPath": "docs",
               "budgets": [
                 {
