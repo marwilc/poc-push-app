@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { MessagePayload, getMessaging, getToken, onMessage } from "firebase/messaging";
+import { SwPush } from '@angular/service-worker';
+import { MessagePayload } from "firebase/messaging";
 import { environment } from 'src/environments/environment';
 
 
@@ -12,38 +13,25 @@ export class AppComponent implements OnInit {
 
   title = 'poc-push-app';
   message: MessagePayload | undefined;
-  messaging
 
-  constructor(){
-    this.messaging = getMessaging();
+  constructor(
+    private swPush: SwPush
+  ){
 
   }
 
   ngOnInit(): void {
-    this.requestPermission();
-  }
-
-
-  requestPermission() {
-    getToken(this.messaging, 
-     { vapidKey: environment.firebase.vapidKey}).then(
-       (currentToken) => {
-         if (currentToken) {
-           console.log("Hurraaa!!! we got the token.....");
-           console.log(currentToken);
-           this.listen();
-         } else {
-           console.log('No registration token available. Request permission to generate one.');
-         }
-     }).catch((err) => {
-        console.log('An error occurred while retrieving token. ', err);
+    this.swPush.requestSubscription({serverPublicKey: environment.firebase.vapidKey}).then(subscription => {
+      // Send the subscription to your server so that you can send push notifications to the user.
+      console.log(subscription.endpoint);
+      this.listen();
     });
   }
 
   listen() {
-    onMessage(this.messaging, (payload) => {
-      console.log('Message received. ', payload);
-      this.message = payload;
+   
+    this.swPush.messages.subscribe(message => {
+      console.log(message);
     });
   }
 }
