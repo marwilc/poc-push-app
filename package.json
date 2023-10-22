@@ -5,6 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:gp": "ng build --configuration=gp",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "dev:ssr": "ng run poc-push-app:serve-ssr",
