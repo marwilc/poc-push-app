@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1697989367658,
+  "timestamp": 1697991079508,
   "index": "/poc-push-app/index.html",
   "assetGroups": [
     {
@@ -14,7 +14,7 @@
         "/poc-push-app/favicon.ico",
         "/poc-push-app/firebase-messaging-sw.js",
         "/poc-push-app/index.html",
-        "/poc-push-app/main.c221fa7e0a827a43.js",
+        "/poc-push-app/main.ccfc0aa6748cf631.js",
         "/poc-push-app/manifest.webmanifest",
         "/poc-push-app/polyfills.6daa8ceca1619a76.js",
         "/poc-push-app/runtime.258c190622b2327c.js",
@@ -54,8 +54,8 @@
     "/poc-push-app/assets/icons/icon-96x96.png": "592885efcbfee27e5e20be4fa3043589390d2740",
     "/poc-push-app/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
     "/poc-push-app/firebase-messaging-sw.js": "8df26d82b510385dae8e6dde714f4fbdf475675b",
-    "/poc-push-app/index.html": "a75b7881bd1adfb4dd203fc3fe3a5cd3fa649f87",
-    "/poc-push-app/main.c221fa7e0a827a43.js": "9b8c8c4ceb24f7579a6beb43b945c53bac7f6f6b",
+    "/poc-push-app/index.html": "3dce4cf53c9875d571e2a7142a529d22fe0ef29e",
+    "/poc-push-app/main.ccfc0aa6748cf631.js": "9b4614cf1f9ba7f77ca3aa94e034cad4cd3c7e8e",
     "/poc-push-app/manifest.webmanifest": "dc1101f815a5f9752fe08b185fea01ae2e4dae71",
     "/poc-push-app/polyfills.6daa8ceca1619a76.js": "9855d47ae1d278fe1886837e71d1b14347a647b5",
     "/poc-push-app/runtime.258c190622b2327c.js": "ec93e0ca25050ea39aed93d401debb1fc0332cbc",

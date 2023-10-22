@@ -1,11 +1,13 @@
 import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { initializeApp } from 'firebase/app';
 import { environment } from 'src/environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ReqInterceptor } from './req.interceptor';
 initializeApp(environment.firebase);
 
 
@@ -23,7 +25,7 @@ initializeApp(environment.firebase);
       registrationStrategy: 'registerWhenStable:30000'
     })
   ],
-  providers: [],
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: ReqInterceptor, multi: true },],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
